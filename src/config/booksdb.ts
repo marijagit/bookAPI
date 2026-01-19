@@ -19,7 +19,8 @@ let books: Record<number, Book> = {
       },
       3: {
             author: "Dante Alighieri",
-            title: "The Divine Comedy"
+            title: "The Divine Comedy",
+            reviews: {}
       },
       4: {
             author: "Unknown",
@@ -80,3 +81,4 @@ let books: Record<number, Book> = {
 };
 
 export { books };
+
