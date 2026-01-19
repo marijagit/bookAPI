@@ -52,14 +52,14 @@ bookController.get('/isbn/:isbn', (req, res) => {
 
 //get books by the title
 bookController.get('/title/:title', (req: Request, res: Response) => {
-    let title = (req.params.title as string).toLowerCase();
+    let title = req.params.title as string;
     if (!title || title === '') {
         return res.status(400).json({ message: 'Title is required!' });
     }
 
     let booksWithTitle: Book[] = [];
     for (let book of Object.values(books)) {
-        if (book.title.toLowerCase().includes(title)) {
+        if (book.title.toLowerCase().includes(title.toLowerCase())) {
             booksWithTitle.push(book);
         }
     }
@@ -70,3 +70,4 @@ bookController.get('/title/:title', (req: Request, res: Response) => {
 });
 
 export { bookController };
+
